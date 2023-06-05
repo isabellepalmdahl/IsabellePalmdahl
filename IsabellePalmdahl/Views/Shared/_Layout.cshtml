@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>@ViewData["Title"] - IsabellePalmdahl</title>
+    <title>@ViewData["Title"] - Isabelle Palmdahl</title>
     <link rel="stylesheet" href="~/css/main.css" />
 @*    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
 @*    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />*@
@@ -16,17 +16,25 @@
 
 			<!-- Logo -->
 			<div id="logo">
-				<h1><a href="index.html">Isabelle Palmdahl</a></h1>
+				<h1><a asp-controller="Home" asp-action="Index">Isabelle Palmdahl</a></h1>
 				<p>System development & Graphic Design</p>
 			</div>
 
 			<!-- Nav -->
 			<nav id="nav">
 				<ul>
-					<li class="current"><a href="index.html">Home</a></li>
-					<li><a href="left-sidebar.html">Portfolio</a></li>
-					<li><a href="right-sidebar.html">About me</a></li>
-					<li><a href="no-sidebar.html">Services</a></li>
+					<li class="current"><a asp-controller="Home" asp-action="Index">Home</a></li>
+					<li><a asp-controller="About" asp-action="Index">About Me</a></li>
+					<li><a asp-controller="Portfolio" asp-action="Index">Portfolio</a></li>
+					<li><a asp-controller="Services" asp-action="Index">Services</a>
+						<ul>
+						<li><a asp-controller="Services" asp-action="WebDevelopment">Web development</a></li>
+							<li><a asp-controller="Services" asp-action="AppDevelopment">App development</a></li>
+							<li><a asp-controller="Services" asp-action="GraphicDesign">Graphic Design</a></li>
+							<li><a asp-controller="Services" asp-action="Marketing">Marketing</a></li>
+							<li><a asp-controller="Services" asp-action="LeadGeneration">Lead Generation</a></li>
+						</ul>
+					</li>
 				</ul>
 			</nav>
 
@@ -35,8 +43,78 @@
 
     <main role="main" >
         @RenderBody()
-    </main>
+		<!-- Services -->
+		<section id="highlights" class="wrapper style3">
+			<div class="title">Services</div>
+			<div class="container">
+				<div class="row aln-center">
+					<div class="col-4 col-12-medium">
+						<section class="highlight">
+							<a href="#" class="image featured"><img src="~/images/pic02.jpg" alt="" /></a>
+							<h3><a href="#">Aliquam diam consequat</a></h3>
+							<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+							<ul class="actions">
+								<li><a href="#" class="button style1">Learn More</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="col-4 col-12-medium">
+						<section class="highlight">
+							<a href="#" class="image featured"><img src="~/images/pic03.jpg" alt="" /></a>
+							<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+							<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+							<ul class="actions">
+								<li><a href="#" class="button style1">Learn More</a></li>
+							</ul>
+						</section>
+					</div>
+					<div class="col-4 col-12-medium">
+						<section class="highlight">
+							<a href="#" class="image featured"><img src="~/images/pic04.jpg" alt="" /></a>
+							<h3><a href="#">Mattis tempus lorem</a></h3>
+							<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+							<ul class="actions">
+								<li><a href="#" class="button style1">Learn More</a></li>
+							</ul>
+						</section>
 
+					</div>
+					<div class="row aln-center">
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="~/images/pic02.jpg" alt="" /></a>
+								<h3><a href="#">Aliquam diam consequat</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="~/images/pic03.jpg" alt="" /></a>
+								<h3><a href="#">Nisl adipiscing sed lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+						<div class="col-4 col-12-medium">
+							<section class="highlight">
+								<a href="#" class="image featured"><img src="~/images/pic04.jpg" alt="" /></a>
+								<h3><a href="#">Mattis tempus lorem</a></h3>
+								<p>Eget mattis at, laoreet vel amet sed velit aliquam diam ante, dolor aliquet sit amet vulputate mattis amet laoreet lorem.</p>
+								<ul class="actions">
+									<li><a href="#" class="button style1">Learn More</a></li>
+								</ul>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    </main>
 
     <footer class="border-top footer text-muted">
 		<!-- Footer -->
@@ -107,7 +185,7 @@
 									<section>
 										<h3 class="icon solid fa-phone">Phone</h3>
 										<p>
-											+34 642 800 137
+											<a href="tel:+34642800137">+34 642 800 137</a>
 										</p>
 									</section>
 								</div>
@@ -115,7 +193,7 @@
 									<section>
 										<h3 class="icon solid fa-envelope">Email</h3>
 										<p>
-											<a href="ISABELLEPALMDAHL@HOTMAIL.COM">isabellepalmdahl@hotmail.com</a>
+											<a href="mailto:isabellepalmdahl@hotmail.com">isabellepalmdahl@hotmail.com</a>
 										</p>
 									</section>
 								</div>
