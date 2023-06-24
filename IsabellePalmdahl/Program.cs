@@ -1,7 +1,22 @@
+using IsabellePalmdahl.Data;
+using IsabellePalmdahl.Repositories;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connection = builder.Configuration["ConnectionString:DefaultConnection"];
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+	options.UseMySql(connection, ServerVersion.AutoDetect(connection));
+});
+//change ef wopw
+
+AddScoped();
 
 var app = builder.Build();
 
@@ -25,3 +40,8 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+void AddScoped() 
+{
+    builder.Services.AddScoped<IDbRepository, DbRepository>();
+}

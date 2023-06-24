@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>004c1146-5f58-4ebc-90a0-1b2d725e9dc9</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,6 +19,29 @@
     <None Include="wwwroot\images\pic08.jpg" />
     <None Include="wwwroot\images\pic09.jpg" />
     <None Include="wwwroot\images\pic10.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="7.0.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.7" />
+    <PackageReference Include="MySql.Data" Version="8.0.33" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.2" />
+    <PackageReference Include="MySqlConnector" Version="2.2.6" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
 
 </Project>
